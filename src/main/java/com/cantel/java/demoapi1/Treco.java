@@ -22,7 +22,7 @@ public class Treco {
 	@Column(nullable = false)
 	private Long id;
 	
-	@Column(length = 63, nullable = false)
+	@Column(length = 63)
 	private String name;
 	
 	@Column(length = 127)

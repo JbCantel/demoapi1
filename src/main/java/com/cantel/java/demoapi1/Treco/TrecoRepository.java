@@ -1,4 +1,4 @@
-package com.cantel.java.demoapi1;
+package com.cantel.java.demoapi1.Treco;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.cantel.user;
+package com.cantel.java.demoapi1.Lista;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,10 +15,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class User {
+public class Lista {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false)
 	private Long id ;
 	
@@ -32,4 +32,3 @@ public class User {
 	private String password;
            
 }
-

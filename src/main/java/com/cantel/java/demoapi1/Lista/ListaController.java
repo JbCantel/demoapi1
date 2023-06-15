@@ -1,4 +1,4 @@
-package com.cantel.java.demoapi1;
+package com.cantel.java.demoapi1.Lista;
 
 import java.util.List;
 
@@ -14,47 +14,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/trecos")
+@RequestMapping("/listas")
 
-public class TrecoController {
+public class ListaController {
 
 	@Autowired
-	private TrecoRepository trecoRepository;
+	private ListaRepository listaRepository;
 
 	@GetMapping
-	public List<Treco> getAll() {
-		return trecoRepository.findAll();
+	public List<Lista> getAll() {
+		return listaRepository.findAll();
 	}
 
 	@GetMapping(path = "/{id}")
-	public Treco getOne(@PathVariable Long id) {
-		if (trecoRepository.existsById(id)) {
-			return trecoRepository.findById(id).get();
+	public Lista getOne(@PathVariable Long id) {
+		if (listaRepository.existsById(id)) {
+			return listaRepository.findById(id).get();
 		}
 		return null;
 	}
 
 	@PostMapping
-	public Treco post(@RequestBody Treco treco) {
-		return trecoRepository.save(treco);
+	public Lista post(@RequestBody Lista lista) {
+		return listaRepository.save(lista);
 	}
 
 	@DeleteMapping(path = "/{id}", produces = "application/json")
 	public String delete(@PathVariable Long id) {
-		if (trecoRepository.existsById(id)) {
-			trecoRepository.deleteById(id);
+		if (listaRepository.existsById(id)) {
+			listaRepository.deleteById(id);
 			return "{ \"status\" : \"deleted\" }";
 		}
 		return "{ \"status\" : \"error\" }";
 	}
 
 	@PutMapping(path = "/{id}")
-	public Treco put(@PathVariable Long id, @RequestBody Treco treco) {
+	public Lista put(@PathVariable Long id, @RequestBody Lista lista) {
 		return null;
 	}
 
 	@PatchMapping(path = "/{id}")
-	public Treco patch(@PathVariable Long id, @RequestBody Treco treco) {
+	public Lista patch(@PathVariable Long id, @RequestBody Lista lista) {
 		return null;
 	}
 

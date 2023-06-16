@@ -37,7 +37,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping
-	public Usuario post(@RequestBody Usuario usuario) {
+	public Usuario post(@RequestBody Usuario usuario) throws JsonProcessingException {
 		return lista.save(usuario);
 	}
 
